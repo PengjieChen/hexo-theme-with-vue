@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div>
-      <span @click="toggleTimeline" v-if="plusOrMinus">{{plusOrMinus}} {{time.year}}({{time.postlist.length}})</span>
+    <div class="year-line">
+      <span @click="toggleTimeline" v-if="plusOrMinus">{{plusOrMinus}} {{time.year}} ({{time.postlist.length}})</span>
     </div>
     <div class="month-items" v-if="showTimeline" v-for="byMonth in time.postlist">
       <router-link :to="{ name: 'PostsByTL', params: { year: time.year, month: byMonth.month}}">
-        <span @click="updateTimelinea(byMonth.postlist)">{{byMonth.month}}({{byMonth.postlist.length}})</span>
+        <span @click="updateTimelinea(byMonth.postlist)">{{byMonth.month}} ({{byMonth.postlist.length}})</span>
         </router-link>
     </div>
   </div>
@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     plusOrMinus () {
-      return this.showTimeline ? '-' : '+'
+      return this.showTimeline ? '<' : '>'
     }
   },
   methods: {
@@ -37,6 +37,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .month-items {
-  transform: translate(20px)
+  transform: translate(30px)
+}
+.year-line :hover {
+  cursor: pointer;
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
 <header>
   <div class="site-name">
-    {{siteCfg.title}}
+    <h1>{{siteCfg.title}}</h1>
   </div>
   <ul>
     <li v-for="menu in siteCfg.table">
-      <a v-if="menu.type === 'permalink'" :href="menu.path">{{ menu.title }}</a>
-      <router-link v-else :to="menu.path">{{ menu.title }}</router-link>
+      <a v-if="menu.type === 'permalink'" :href="menu.path"><h1>{{ menu.title }}</h1></a>
+      <router-link v-else :to="menu.path"><h1>{{ menu.title }}</h1></router-link>
     </li>
   </ul>
 </header>
@@ -38,21 +38,27 @@ export default {
 }
 .site-name {
   float: left;
+  margin-left: 20px;
 }
 a {
-  float: left;
+  /* float: left; */
   text-decoration: none;
   color: black;
 }
-a :active {
+a:active {
   color: black;
 }
 ul {
   float: right;
-  list-style-type: none;
+  margin-right: 20px;
 }
 li {
   display: inline-block;
-  margin-left: 5px;
+  margin-left: 18px;
+}
+header {
+  width: 100%;
+  height: 92px;
+  background-color: gray;
 }
 </style>

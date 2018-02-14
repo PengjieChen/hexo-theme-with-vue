@@ -1,6 +1,7 @@
 <template>
 <div>
-    <div :style="indent"><span @click="toggleChildren" v-if="plusOrMinus">{{plusOrMinus}}</span>
+    <div class="pom" :style="indent">
+      <span @click="toggleChildren" v-if="plusOrMinus">{{plusOrMinus}}</span>
       <router-link :to="{ name: 'PostsByCat', params: { cat: name }}">{{name}}</router-link>
       </div>
     <cat-tree v-if="showChildren" v-for="sub in tree" :tree="sub.children" :name="sub.name" :depth="depth + 1" :key="sub._id">
@@ -20,7 +21,7 @@ export default {
       return { transform: `translate(${this.depth * 20}px)` }
     },
     plusOrMinus () {
-      return this.tree ? (this.showChildren ? '-' : '+') : ' '
+      return this.tree ? (this.showChildren ? '<' : '>') : ' '
     }
   },
   methods: {
@@ -32,5 +33,7 @@ export default {
 </script>
 
 <style scoped>
-
+.pom :hover {
+  cursor: pointer;
+}
 </style>

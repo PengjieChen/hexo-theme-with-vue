@@ -2,10 +2,10 @@
   <section>
     <div>
       <ul>
-        Find {{tagList.postlist.length}} posts in #{{tagList.name}}!
-        <li v-for="post in tagList.postlist">
+        Find {{tagList.postlist.length}} post{{tagList.postlist.length > 1 ? 's' : ' '}} in #{{tagList.name}}!
+        <li class="posts" v-for="post in tagList.postlist">
           <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <p v-html="post.date"></p>
+          <p>{{post.date | timeFormat}}</p>
         </li>
       </ul>
     </div>
@@ -40,7 +40,5 @@ export default {
 </script>
 
 <style scoped>
-li {
-  list-style-type: none;
-}
+
 </style>

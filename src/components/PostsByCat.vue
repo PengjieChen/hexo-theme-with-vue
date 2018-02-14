@@ -2,10 +2,10 @@
   <section>
     <div>
       <ul>
-        Find {{catList.postlist.length}} posts in #{{catList.name}}!
-        <li v-for="post in catList.postlist">
+        Find {{catList.postlist.length}} post{{catList.postlist.length > 1 ? 's' : ' '}} in #{{catList.name}}!
+        <li class="posts" v-for="post in catList.postlist">
           <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <p v-html="post.date"></p>
+          <p>{{post.date | timeFormat}}</p>
         </li>
       </ul>
     </div>
@@ -49,9 +49,5 @@ a {
 
 a:hover {
   border: 1px solid black;
-}
-
-li {
-  list-style-type: none;
 }
 </style>

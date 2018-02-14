@@ -2,9 +2,9 @@
   <section>
     <div>
       <ul>
-        <li v-for="post in posts">
+        <li class="posts" v-for="post in posts">
           <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <p v-html="post.date"></p>
+          <p>{{post.date | timeFormat}}</p>
         </li>
       </ul>
     </div>
@@ -60,9 +60,5 @@ a {
 
 a:hover {
   border: 1px solid black;
-}
-
-li {
-  list-style-type: none;
 }
 </style>

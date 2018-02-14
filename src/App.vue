@@ -29,10 +29,13 @@ export default {
 </script>
 
 <style>
-#app {
+p {
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+h1, h2, h3 {
+  text-align: center;
 }
 .main-contain {
   float: left;
@@ -46,11 +49,26 @@ export default {
   margin-left: -100%;
   width: 200px;
 }
+.posts {
+  margin: 10px;
+}
 .side, .main-contain {
-  padding-bottom: 9999px;
-  margin-bottom: -9999px;
+  /* padding-bottom: 9999px;
+  margin-bottom: -9999px; */
 }
 .clear {
   clear: both;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active {
+  color: black;
+}
+a:hover {
+  color: grey;
 }
 </style>

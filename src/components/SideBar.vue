@@ -1,22 +1,25 @@
 <template>
   <nav>
     <div v-show="isShow" id="nav_info">
-      <div class="atuhor_info">
-        author info
+      <div id="atuhor-info">
+        <h2>author info</h2>
       </div>
-      <div class="achievements">
-        achievements
-        <cat-tree v-for="sub in catTree" :tree="sub.children" :name="sub.name" :depth="0" :key="sub._id">
+      <div id="achievements">
+        <h2>achievements</h2>
+        <hr />
+        <cat-tree class="cat-tree" v-for="sub in catTree" :tree="sub.children" :name="sub.name" :depth="0" :key="sub._id">
         </cat-tree>
       </div>
-      <div class="tags">
-        tags
-        <tags></tags>
+      <div id="tags">
+        <h2>tags</h2>
+        <hr />
+        <tags class="tags-list"></tags>
       </div>
       <div class="clear"></div>
-      <div class="timeline">
-        timeline
-        <timeline></timeline>
+      <div id="timeline">
+        <h2>timeline</h2>
+        <hr />
+        <timeline class="timeline-list"></timeline>
       </div>
     </div>
     <div id="nav_click" @click="clickRvert">
@@ -65,11 +68,11 @@ export default {
 
 <style scoped>
 nav {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 #nav_info, #nav_click{
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 nav_info {
@@ -84,6 +87,22 @@ nav_info {
 }
 
 div {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
+}
+
+.cat-tree, .tags-list, .timeline-list {
+  font-size: 18px;
+}
+
+#atuhor-info, #achievements, #tags, #timeline {
+  margin-top: 10px;
+  border: 1px solid white;
+  background-color: gray;
+  border-radius: 8px;
+  /* box-shadow:2px 2px 5px #444; */
+}
+
+h2 {
+  margin: 5px auto;
 }
 </style>
