@@ -1,5 +1,5 @@
 <template>
-  <section class="hello" v-html="post.content">
+  <section v-html="post.content">
   </section>
 </template>
 
@@ -25,11 +25,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  border:1px solid #F00;
-}
 
-.hello {
-  float: left;
-}
 </style>

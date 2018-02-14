@@ -1,5 +1,5 @@
 <template>
-  <section class="hello">
+  <section>
     <div>
       <ul>
         Find {{tagList.postlist.length}} posts in #{{tagList.name}}!
@@ -39,36 +39,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  border:1px solid #F00;
-}
-
-.hello {
-  float: left;
-  text-align: left;
-}
-
-.paginator {
-  display: inline-block;
-  margin-left: 5px;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  border: 1px solid white;
-}
-
-a:hover {
-  border: 1px solid black;
-}
-
-.paginator :visited {
-
-}
-
 li {
   list-style-type: none;
 }

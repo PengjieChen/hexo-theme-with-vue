@@ -17,7 +17,7 @@ export default {
   props: ['tree', 'name', 'depth'],
   computed: {
     indent () {
-      return { transform: `translate(${this.depth * 10}px)` }
+      return { transform: `translate(${this.depth * 20}px)` }
     },
     plusOrMinus () {
       return this.tree ? (this.showChildren ? '-' : '+') : ' '
@@ -31,26 +31,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div {
-  text-align: left;
-}
-h1, h2 {
-  font-weight: normal;
-  border:1px solid #F00;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  border:1px solid #0F0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-  border:1px solid #00F;
-}
-a {
-  color: #42b983;
-}
+
 </style>

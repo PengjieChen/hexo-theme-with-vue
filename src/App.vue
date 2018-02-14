@@ -2,8 +2,12 @@
   <div id="app">
     <top-header class='top'></top-header>
     <div class="clear"></div>
+    <section class="main-contain">
+      <div class="post-view">
+      <router-view></router-view>
+      </div>
+    </section>
     <side-bar class='side'></side-bar>
-    <router-view></router-view>
     <div class="clear"></div>
     <bottom-footer class='bottom'></bottom-footer>
   </div>
@@ -26,12 +30,25 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.main-contain {
+  float: left;
+  width: 100%;
+}
+.post-view {
+  margin-left: 200px;
+}
+.side {
+  float: left;
+  margin-left: -100%;
+  width: 200px;
+}
+.side, .main-contain {
+  padding-bottom: 9999px;
+  margin-bottom: -9999px;
 }
 .clear {
   clear: both;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="tag in tags">
+    <div class="tag-item" v-for="tag in tags">
       <router-link :to="{ name: 'PostsByTag', params: { tag: tag.name }}">{{tag.name}}</router-link>
       </div>
   </div>
@@ -27,11 +27,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  border:1px solid #F00;
-}
-
-.hello {
+.tag-item {
   float: left;
+  margin-left: 10px;
 }
 </style>

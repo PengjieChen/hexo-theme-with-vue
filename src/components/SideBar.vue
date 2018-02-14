@@ -1,19 +1,20 @@
 <template>
   <nav>
     <div v-show="isShow" id="nav_info">
-      <div class="nav_raw">
+      <div class="atuhor_info">
         author info
       </div>
-      <div class="nav_raw">
+      <div class="achievements">
         achievements
         <cat-tree v-for="sub in catTree" :tree="sub.children" :name="sub.name" :depth="0" :key="sub._id">
         </cat-tree>
       </div>
-      <div class="nav_raw">
+      <div class="tags">
         tags
         <tags></tags>
       </div>
-      <div class="nav_raw">
+      <div class="clear"></div>
+      <div class="timeline">
         timeline
         <timeline></timeline>
       </div>
@@ -69,24 +70,17 @@ nav {
 
 #nav_info, #nav_click{
   border: 1px solid red;
-  float: left;
-  text-align: center;
-  vertical-align: middle;
 }
 
 nav_info {
-
+  width: 200px;
 }
 
 #nav_click {
-
+  display: none;
   margin: auto 0px;
   padding-top: 200px;
   width: 1%;
-}
-
-.nav_raw {
-
 }
 
 div {

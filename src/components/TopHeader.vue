@@ -1,8 +1,8 @@
 <template>
 <header>
-  <a>
+  <div class="site-name">
     {{siteCfg.title}}
-  </a>
+  </div>
   <ul>
     <li v-for="menu in siteCfg.table">
       <a v-if="menu.type === 'permalink'" :href="menu.path">{{ menu.title }}</a>
@@ -33,8 +33,11 @@ export default {
 </script>
 
 <style scoped>
-a, ul, li {
+.site-name, a, ul, li {
   margin: 0px auto;
+}
+.site-name {
+  float: left;
 }
 a {
   float: left;

@@ -1,5 +1,5 @@
 <template>
-  <section class="hello">
+  <section>
     <div>
       <ul>
         <li v-for="post in posts">
@@ -47,15 +47,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  border:1px solid #F00;
-}
-
-.hello {
-  float: left;
-  text-align: left;
-}
-
 .paginator {
   display: inline-block;
   margin-left: 5px;
@@ -69,10 +60,6 @@ a {
 
 a:hover {
   border: 1px solid black;
-}
-
-.paginator :visited {
-
 }
 
 li {
