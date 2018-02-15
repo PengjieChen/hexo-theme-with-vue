@@ -26,14 +26,20 @@ export default {
   },
   created () {
     this.getPostsByCat({cat: this.cat})
-    .then()
-    // console.log(this.posts)
+    .then(
+      () => {
+        document.title = this.cat
+      }
+    )
   },
   watch: {
     '$route' (to, from) {
       this.getPostsByCat({cat: this.cat})
-      .then()
-      // console.log(1)
+      .then(
+        () => {
+          document.title = this.cat
+        }
+      )
     }
   }
 }
@@ -47,7 +53,7 @@ a {
   border: 1px solid white;
 }
 
-a:hover {
+/* a:hover {
   border: 1px solid black;
-}
+} */
 </style>

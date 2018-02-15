@@ -15,7 +15,7 @@ footer {
   margin: 10px auto;
   text-align: center;
   width: 100%;
-  background-color: gray;
+  background-color: #BFBFBF;
 }
 h1 {
   margin: 0;

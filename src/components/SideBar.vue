@@ -3,6 +3,9 @@
     <div v-show="isShow" id="nav_info">
       <div id="atuhor-info">
         <h2>author info</h2>
+        <hr />
+        <authorinfo>
+        </authorinfo>
       </div>
       <div id="achievements">
         <h2>achievements</h2>
@@ -33,13 +36,15 @@ import { mapGetters, mapActions } from 'vuex'
 import CatTree from '@/components/CatTree.vue'
 import Tags from '@/components/Tags.vue'
 import Timeline from '@/components/Timeline.vue'
+import AuthorInfo from '@/components/AuthorInfo.vue'
 
 export default {
   name: 'SideBar',
   components: {
     'cat-tree': CatTree,
     'tags': Tags,
-    'timeline': Timeline
+    'timeline': Timeline,
+    'authorinfo': AuthorInfo
   },
   data () {
     return {
@@ -67,14 +72,6 @@ export default {
 </script>
 
 <style scoped>
-nav {
-  /* border: 1px solid blue; */
-}
-
-#nav_info, #nav_click{
-  /* border: 1px solid red; */
-}
-
 nav_info {
   width: 200px;
 }
@@ -86,23 +83,23 @@ nav_info {
   width: 1%;
 }
 
-div {
-  /* border: 1px solid yellow; */
-}
-
 .cat-tree, .tags-list, .timeline-list {
   font-size: 18px;
 }
 
 #atuhor-info, #achievements, #tags, #timeline {
-  margin-top: 10px;
+  margin-top: 20px;
   border: 1px solid white;
-  background-color: gray;
+  background-color: #DFDFDF;
   border-radius: 8px;
   /* box-shadow:2px 2px 5px #444; */
 }
 
 h2 {
   margin: 5px auto;
+}
+
+h1, h2, h3 {
+  text-align: center;
 }
 </style>

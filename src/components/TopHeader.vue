@@ -45,9 +45,9 @@ a {
   text-decoration: none;
   color: black;
 }
-a:active {
+/* a:active {
   color: black;
-}
+} */
 ul {
   float: right;
   margin-right: 20px;
@@ -59,6 +59,6 @@ li {
 header {
   width: 100%;
   height: 92px;
-  background-color: gray;
+  background-color: #BFBFBF;
 }
 </style>

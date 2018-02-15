@@ -26,14 +26,20 @@ export default {
   },
   created () {
     this.getPostsByTag({tag: this.tag})
-    .then()
-    // console.log(this.posts)
+    .then(
+      () => {
+        document.title = '#' + this.tag
+      }
+    )
   },
   watch: {
     '$route' (to, from) {
       this.getPostsByTag({tag: this.tag})
-      .then()
-      // console.log(1)
+      .then(
+        () => {
+          document.title = '#' + this.tag
+        }
+      )
     }
   }
 }

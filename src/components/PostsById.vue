@@ -25,21 +25,27 @@ export default {
   name: 'PostsById',
   props: ['id'],
   computed: {
-    ...mapGetters([ 'posts', 'pageCount' ])
+    ...mapGetters([ 'posts', 'pageCount', 'siteCfg' ])
   },
   methods: {
     ...mapActions([ 'getPosts' ])
   },
   created () {
     this.getPosts({id: this.id})
-    .then()
-    // console.log(this.posts)
+    .then(
+      () => {
+        document.title = this.siteCfg.title
+      }
+    )
   },
   watch: {
     '$route' (to, from) {
       this.getPosts({id: this.id})
-      .then()
-      // console.log(1)
+      .then(
+        () => {
+          document.title = this.siteCfg.title
+        }
+      )
     }
   }
 }
@@ -58,7 +64,7 @@ a {
   border: 1px solid white;
 }
 
-a:hover {
+/* a:hover {
   border: 1px solid black;
-}
+} */
 </style>

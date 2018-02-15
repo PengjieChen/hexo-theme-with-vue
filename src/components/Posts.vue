@@ -25,14 +25,18 @@ export default {
   name: 'Posts',
   props: ['id'],
   computed: {
-    ...mapGetters([ 'posts', 'pageCount' ])
+    ...mapGetters([ 'posts', 'pageCount', 'siteCfg' ])
   },
   methods: {
     ...mapActions([ 'getPosts' ])
   },
   created () {
     this.getPosts({id: 1})
-    .then()
+    .then(
+      () => {
+        document.title = this.siteCfg.title
+      }
+    )
   }
 }
 </script>
@@ -40,7 +44,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .paginator {
-  margin: 10px;
+  margin: 10px auto 10px 30px;
   display: inline-block;
 }
 

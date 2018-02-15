@@ -1,5 +1,7 @@
 <template>
-  <section v-html="post.content">
+  <section id="post-contain">
+  <div v-html="post.content">
+  </div>
   </section>
 </template>
 
@@ -17,13 +19,17 @@ export default {
   },
   created () {
     this.getPost({slug: this.slug})
-    .then()
+    .then(
+      () => {
+        document.title = this.slug
+      }
+    )
     // console.log(this.posts)
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
+<style lang="scss" src="../styles/base.scss"></style>
+<style lang="scss" src="../styles/post.scss"></style>
+<style lang="scss" src="../styles/code.scss"></style>

@@ -41,6 +41,7 @@ export default {
             }
           }
         }
+        document.title = 'Time line for all the posts'
       })
   }
 }

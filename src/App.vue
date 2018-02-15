@@ -34,9 +34,6 @@ p {
   margin: 0;
   overflow: hidden;
 }
-h1, h2, h3 {
-  text-align: center;
-}
 .main-contain {
   float: left;
   width: 100%;
@@ -50,11 +47,8 @@ h1, h2, h3 {
   width: 200px;
 }
 .posts {
-  margin: 10px;
-}
-.side, .main-contain {
-  /* padding-bottom: 9999px;
-  margin-bottom: -9999px; */
+  margin: 20px;
+  /* background-color: #DFDFDF; */
 }
 .clear {
   clear: both;
@@ -67,6 +61,9 @@ a {
 }
 a:hover, a:visited, a:link, a:active {
   color: black;
+}
+a:focus {
+  outline:none;
 }
 a:hover {
   color: grey;
