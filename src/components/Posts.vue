@@ -1,10 +1,11 @@
 <template>
   <section>
     <div>
-      <ul>
+      <ul class="posts-section">
         <li class="posts" v-for="post in posts">
           <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <p>{{post.date | timeFormat}}</p>
+          <div v-if="post.excerpt" v-html="post.excerpt" class="post-excerpt"></div>
+          <div class="post-date">{{post.date | timeFormat}}</div>
         </li>
       </ul>
     </div>
@@ -43,13 +44,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.paginator {
-  margin: 10px auto 10px 30px;
-  display: inline-block;
-}
-
 a {
   text-decoration: none;
+  font-size: 1.3em;
   color: black;
 }
 

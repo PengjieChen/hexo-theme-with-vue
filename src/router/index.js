@@ -47,6 +47,11 @@ export default new Router({
       component: () => import('@/components/PostsByTL')
     },
     {
+      path: '/CV',
+      name: 'CV',
+      component: () => import('@/components/CV')
+    },
+    {
       path: '*',
       name: 'NotFound',
       component: () => import('@/components/NotFound')

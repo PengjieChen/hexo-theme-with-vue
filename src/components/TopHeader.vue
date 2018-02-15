@@ -58,7 +58,7 @@ li {
 }
 header {
   width: 100%;
-  height: 92px;
-  background-color: #BFBFBF;
+  height: 80px;
+  background-color: #AAA;
 }
 </style>

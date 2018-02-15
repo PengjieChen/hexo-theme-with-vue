@@ -1,11 +1,12 @@
 <template>
   <section>
     <div>
-      <ul>
+      <ul class="posts-section">
         Find {{timelinea.length}} post{{timelinea.length > 1 ? 's' : ' '}} in {{year}} - {{month}}! 
         <li class="posts" v-for="post in timelinea">
           <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <p>{{post.date | timeFormat}}</p>
+          <div v-if="post.excerpt" v-html="post.excerpt" class="post-excerpt"></div>
+          <div class="post-date">{{post.date | timeFormat}}</div>
         </li>
       </ul>
     </div>
@@ -48,5 +49,10 @@ export default {
 </script>
 
 <style scoped>
-
+a {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: black;
+  border: 1px solid white;
+}
 </style>

@@ -2,25 +2,25 @@
   <nav>
     <div v-show="isShow" id="nav_info">
       <div id="atuhor-info">
-        <h2>author info</h2>
+        <h2>Author info</h2>
         <hr />
         <authorinfo>
         </authorinfo>
       </div>
       <div id="achievements">
-        <h2>achievements</h2>
+        <h2>Achievements</h2>
         <hr />
         <cat-tree class="cat-tree" v-for="sub in catTree" :tree="sub.children" :name="sub.name" :depth="0" :key="sub._id">
         </cat-tree>
       </div>
       <div id="tags">
-        <h2>tags</h2>
+        <h2>Tags</h2>
         <hr />
         <tags class="tags-list"></tags>
       </div>
       <div class="clear"></div>
       <div id="timeline">
-        <h2>timeline</h2>
+        <h2>Timeline</h2>
         <hr />
         <timeline class="timeline-list"></timeline>
       </div>
@@ -84,13 +84,14 @@ nav_info {
 }
 
 .cat-tree, .tags-list, .timeline-list {
+  margin: 0 10px 5px;
   font-size: 18px;
 }
 
 #atuhor-info, #achievements, #tags, #timeline {
   margin-top: 20px;
   border: 1px solid white;
-  background-color: #DFDFDF;
+  background-color: #DDD;
   border-radius: 8px;
   /* box-shadow:2px 2px 5px #444; */
 }

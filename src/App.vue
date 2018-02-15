@@ -40,6 +40,7 @@ p {
 }
 .post-view {
   margin-left: 200px;
+  padding: 20px;
 }
 .side {
   float: left;
@@ -47,8 +48,24 @@ p {
   width: 200px;
 }
 .posts {
-  margin: 20px;
+  margin: 30px;
   /* background-color: #DFDFDF; */
+}
+.post-date {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #7F7F7F;
+  font-size: 0.9em;
+}
+.post-excerpt {
+  margin: 10px auto;
+}
+.posts-section {
+  /* background-color: #A8C8E4; */
+}
+.paginator {
+  margin: 10px auto 10px 20px;
+  display: inline-block;
 }
 .clear {
   clear: both;

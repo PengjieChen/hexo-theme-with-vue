@@ -1,21 +1,32 @@
 <template>
 <footer>
-  <h1>Powered By Hexo</h1>
+  <p>&copy; {{ time }} {{ siteCfg.author || siteCfg.title }}</p>
+  <p>powered by <router-link :to="{ path: '/' }">{{ siteCfg.title }}</router-link></p>
 </footer>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import moment from 'moment'
+
 export default {
-  name: 'BottomFooter'
+  name: 'BottomFooter',
+  computed: {
+    ...mapGetters([ 'siteCfg' ]),
+    time () {
+      return moment(new Date()).format('YYYY')
+    }
+  }
 }
 </script>
 
 <style scoped>
 footer {
   margin: 10px auto;
-  text-align: center;
+  text-align: left;
   width: 100%;
-  background-color: #BFBFBF;
+  background-color: #AAA;
+  font-size: 0.9em;
 }
 h1 {
   margin: 0;

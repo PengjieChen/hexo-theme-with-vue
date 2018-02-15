@@ -1,11 +1,12 @@
 <template>
   <section>
     <div>
-      <ul>
+      <ul class="posts-section">
         Find {{catList.postlist.length}} post{{catList.postlist.length > 1 ? 's' : ' '}} in #{{catList.name}}!
         <li class="posts" v-for="post in catList.postlist">
           <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <p>{{post.date | timeFormat}}</p>
+          <div v-if="post.excerpt" v-html="post.excerpt" class="post-excerpt"></div>
+          <div class="post-date">{{post.date | timeFormat}}</div>
         </li>
       </ul>
     </div>
@@ -49,6 +50,7 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
+  font-size: 1.3em;
   color: black;
   border: 1px solid white;
 }
