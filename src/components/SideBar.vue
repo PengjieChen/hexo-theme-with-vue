@@ -91,8 +91,8 @@ nav_info {
 #atuhor-info, #achievements, #tags, #timeline {
   margin-top: 20px;
   border: 1px solid white;
-  background-color: #DDD;
-  border-radius: 8px;
+  background-color: #D8D8D8;
+  border-radius: 6px;
   /* box-shadow:2px 2px 5px #444; */
 }
 

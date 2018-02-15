@@ -5,7 +5,7 @@
         <br />
         <span v-if="siteCfg.aboutAU">About Author:{{siteCfg.aboutAU}}</span>
       </div>
-      <img src="../assets/QR.jpg" alt="QR"/> 
+      <img class="qr" src="../assets/QR.jpg" alt="QR"/> 
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
 .au-info {
   margin: 10px;
 }
-img {
+.qr {
   display: block;
   width: 180px;
   height: auto;
