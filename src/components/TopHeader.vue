@@ -5,7 +5,7 @@
   </div>
   <ul>
     <li v-for="menu in siteCfg.table">
-      <a v-if="menu.type === 'permalink'" :href="menu.path"><h1>{{ menu.title }}</h1></a>
+      <a v-if="menu.type === 'permalink'" :href="menu.path" target="_blank"><h1>{{ menu.title }}</h1></a>
       <router-link v-else :to="menu.path"><h1>{{ menu.title }}</h1></router-link>
     </li>
   </ul>

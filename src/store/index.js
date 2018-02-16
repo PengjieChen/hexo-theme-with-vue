@@ -4,9 +4,13 @@ import axios from 'axios'
 import router from '../router'
 Vue.use(Vuex)
 
-// axios.defaults.baseURL = window.root
-axios.defaults.baseURL = 'http://localhost:3000'
-// axios.defaults.baseURL = '/' // localhost
+function getRootUrl () {
+  return window.location.origin ? window.location.origin : (window.location.protocol + '/' + window.location.host + '/')
+}
+
+let baseUrl = getRootUrl()
+
+axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? baseUrl : 'http://localhost:3000'
 
 const state = {
   count: 1,

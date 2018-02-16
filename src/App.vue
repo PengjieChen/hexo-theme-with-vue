@@ -80,7 +80,7 @@ a:hover, a:visited, a:link, a:active {
   color: black;
 }
 a:focus {
-  outline:none;
+  outline: none;
 }
 a:hover {
   color: grey;
