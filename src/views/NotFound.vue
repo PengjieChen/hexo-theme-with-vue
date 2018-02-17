@@ -12,6 +12,7 @@ export default {
   name: 'NotFound',
   created () {
     document.title = 'I just lost my way...'
+    window.scrollTo(0, 0)
   }
 }
 </script>
@@ -32,6 +33,8 @@ export default {
   border-radius: 6px;
 }
 .fof {
-  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 70px;
 }
 </style>

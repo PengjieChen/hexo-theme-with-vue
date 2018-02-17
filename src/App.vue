@@ -49,6 +49,7 @@ p {
 }
 .posts {
   margin: 30px;
+  list-style-type: none;
   /* background-color: #DFDFDF; */
 }
 .post-date {
@@ -60,8 +61,10 @@ p {
 .post-excerpt {
   margin: 10px auto;
 }
-.posts-section {
-  /* background-color: #A8C8E4; */
+.list-result {
+  padding-top: 20px;
+  padding-left: 70px;
+  font-size: 1em;
 }
 .paginator {
   margin: 10px auto 10px 20px;
@@ -70,8 +73,13 @@ p {
 .clear {
   clear: both;
 }
-li {
-  list-style-type: none;
+.button {
+  border: 1px solid black;
+  outline: none;
+}
+.button::-moz-focus-inner {
+  border: 0;
+  background-color: #D8D8D8;
 }
 a {
   text-decoration: none;

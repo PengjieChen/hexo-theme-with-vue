@@ -13,7 +13,6 @@ let baseUrl = getRootUrl()
 axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? baseUrl : 'http://localhost:3000'
 
 const state = {
-  count: 1,
   siteCfg: {},
   posts: [],
   post: {},
@@ -27,9 +26,6 @@ const state = {
 }
 
 const getters = {
-  number (state) {
-    return state.count
-  },
   siteCfg (state) {
     return state.siteCfg
   },
@@ -63,12 +59,6 @@ const getters = {
 }
 
 const mutations = {
-  plus (state) {
-    state.count++
-  },
-  plusn (state, val) {
-    state.count += val
-  },
   updateSiteCfg (state, siteCfg) {
     state.siteCfg = siteCfg
   },
@@ -102,19 +92,11 @@ const mutations = {
 }
 
 const actions = {
-  asycplus ({commit}) {
-    return axios.get('api/site.json')
-    .then(({data}) => {
-      commit('plusn', data.per_page)
-    })
-    .catch(function (error) {
-      if (error.message === 'Network Error') {
-        router.push('NotFound')
-      }
-    })
-  },
   goBack () {
     return router.go(-1)
+  },
+  goHome () {
+    return router.push('/')
   },
   getSiteCfg ({commit}) {
     return axios.get('api/site.json')
@@ -186,7 +168,6 @@ const actions = {
   getPostsByTag ({commit}, {tag}) {
     return axios.get(`api/tags/${tag}.json`)
     .then(({data}) => {
-      // console.log(data)
       commit('updateTagList', data)
     })
     .catch(function (error) {
@@ -198,7 +179,6 @@ const actions = {
   getPostsByCat ({commit}, {cat}) {
     return axios.get(`api/categories/${cat}.json`)
     .then(({data}) => {
-      // console.log(data)
       commit('updateCatList', data)
     })
     .catch(function (error) {

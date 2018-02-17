@@ -1,14 +1,6 @@
 <template>
   <section>
-    <div>
-      <ul class="posts-section">
-        <li class="posts" v-for="post in posts">
-          <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <div v-if="post.excerpt" v-html="post.excerpt" class="post-excerpt"></div>
-          <div class="post-date">{{post.date | timeFormat}}</div>
-        </li>
-      </ul>
-    </div>
+    <post-list :postslist="posts"></post-list>
     <div>
       <ul>
         <li class="paginator" v-for="n in pageCount">
@@ -21,10 +13,14 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import PostList from '@/components/PostList.vue'
 
 export default {
   name: 'PostsById',
   props: ['id'],
+  components: {
+    'post-list': PostList
+  },
   computed: {
     ...mapGetters([ 'posts', 'pageCount', 'siteCfg' ])
   },
@@ -47,6 +43,7 @@ export default {
           document.title = this.siteCfg.title
         }
       )
+      window.scrollTo(0, 0)
     }
   }
 }
@@ -60,8 +57,4 @@ a {
   color: black;
   border: 1px solid white;
 }
-
-/* a:hover {
-  border: 1px solid black;
-} */
 </style>

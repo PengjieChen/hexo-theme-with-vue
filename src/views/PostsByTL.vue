@@ -1,24 +1,20 @@
 <template>
   <section>
-    <div>
-      <ul class="posts-section">
-        Find {{timelinea.length}} post{{timelinea.length > 1 ? 's' : ' '}} in {{year}} - {{month}}! 
-        <li class="posts" v-for="post in timelinea">
-          <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <div v-if="post.excerpt" v-html="post.excerpt" class="post-excerpt"></div>
-          <div class="post-date">{{post.date | timeFormat}}</div>
-        </li>
-      </ul>
-    </div>
+    <div class="list-result">Find {{timelinea.length}} post{{timelinea.length > 1 ? 's' : ' '}} in {{year}} - {{month}}!</div>
+    <post-list :postslist="timelinea"></post-list>
   </section>
 </template>
 
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex'
+import PostList from '@/components/PostList.vue'
 
 export default {
   name: 'PostsByTL',
   props: ['year', 'month'],
+  components: {
+    'post-list': PostList
+  },
   computed: {
     ...mapGetters([ 'timelinea', 'timeline' ])
   },
@@ -31,18 +27,16 @@ export default {
       () => {
         for (let tyear of this.timeline) {
           if (tyear.year === this.year) {
-            // console.log('this.year' + this.year)
             for (let tmonth of tyear.postlist) {
               if (tmonth.month === this.month) {
-                // console.log('this.month' + this.month)
                 this.updateTimelinea(tmonth.postlist)
-                // console.log(this.timelinea)
                 break
               }
             }
           }
         }
         document.title = 'Time line for all the posts'
+        window.scrollTo(0, 0)
       })
   }
 }

@@ -1,24 +1,20 @@
 <template>
   <section>
-    <div>
-      <ul class="posts-section">
-        Find {{tagList.postlist.length}} post{{tagList.postlist.length > 1 ? 's' : ' '}} in #{{tagList.name}}!
-        <li class="posts" v-for="post in tagList.postlist">
-          <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <div v-if="post.excerpt" v-html="post.excerpt" class="post-excerpt"></div>
-          <div class="post-date">{{post.date | timeFormat}}</div>
-        </li>
-      </ul>
-    </div>
+    <div class="list-result">Find {{tagList.postlist.length}} post{{tagList.postlist.length > 1 ? 's' : ' '}} in #{{tagList.name}}!</div>
+    <post-list :postslist="tagList.postlist"></post-list>
   </section>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import PostList from '@/components/PostList.vue'
 
 export default {
   name: 'PostsByTag',
   props: ['tag'],
+  components: {
+    'post-list': PostList
+  },
   computed: {
     ...mapGetters([ 'tagList' ])
   },
@@ -41,6 +37,7 @@ export default {
           document.title = '#' + this.tag
         }
       )
+      window.scrollTo(0, 0)
     }
   }
 }

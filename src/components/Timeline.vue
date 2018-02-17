@@ -22,7 +22,6 @@ export default {
   created () {
     this.getTimeline()
     .then()
-    // console.log(this.timeline)
   }
 }
 </script>

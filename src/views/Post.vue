@@ -2,6 +2,10 @@
   <section id="post-contain">
   <div v-html="post.content">
   </div>
+  <div id="back-button">
+    <button class="button" @click="goBack">Back</button>
+    <button class="button" @click="goHome">Home</button>
+  </div>
   </section>
 </template>
 
@@ -15,7 +19,7 @@ export default {
     ...mapGetters([ 'post' ])
   },
   methods: {
-    ...mapActions([ 'getPost' ])
+    ...mapActions([ 'getPost', 'goBack', 'goHome' ])
   },
   created () {
     this.getPost({slug: this.slug})
@@ -24,7 +28,7 @@ export default {
         document.title = this.slug
       }
     )
-    // console.log(this.posts)
+    window.scrollTo(0, 0)
   }
 }
 </script>

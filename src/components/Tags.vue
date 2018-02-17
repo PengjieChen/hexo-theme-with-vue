@@ -20,7 +20,6 @@ export default {
   created () {
     this.getTags()
     .then()
-    // console.log(this.posts)
   }
 }
 </script>

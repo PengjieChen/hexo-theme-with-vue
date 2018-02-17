@@ -1,6 +1,7 @@
 <template>
   <nav>
-    <div v-show="isShow" id="nav_info">
+    <!-- <div v-show="isShow" id="nav_info"> -->
+    <div id="nav_info">
       <div id="atuhor-info">
         <h2>Author info</h2>
         <hr />
@@ -25,9 +26,9 @@
         <timeline class="timeline-list"></timeline>
       </div>
     </div>
-    <div id="nav_click" @click="clickRvert">
+    <!-- <div id="nav_click" @click="clickRvert">
       click {{isShow}}
-    </div>
+    </div> -->
   </nav>
 </template>
 
@@ -46,27 +47,26 @@ export default {
     'timeline': Timeline,
     'authorinfo': AuthorInfo
   },
-  data () {
-    return {
-      navShow: true
-    }
-  },
+  // data () {
+  //   return {
+  //     navShow: true
+  //   }
+  // },
   computed: {
-    isShow: function () {
-      return this.navShow
-    },
+    // isShow: function () {
+    //   return this.navShow
+    // },
     ...mapGetters([ 'catTree' ])
   },
   methods: {
-    clickRvert: function () {
-      this.navShow = !this.navShow
-    },
+    // clickRvert: function () {
+    //   this.navShow = !this.navShow
+    // },
     ...mapActions([ 'getCatTree' ])
   },
   created () {
     this.getCatTree()
       .then()
-    // console.log(catTree)
   }
 }
 </script>
@@ -76,12 +76,12 @@ nav_info {
   width: 200px;
 }
 
-#nav_click {
+/* #nav_click {
   display: none;
   margin: auto 0px;
   padding-top: 200px;
   width: 1%;
-}
+} */
 
 .cat-tree, .tags-list, .timeline-list {
   margin: 0 10px 5px;

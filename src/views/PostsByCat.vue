@@ -1,24 +1,20 @@
 <template>
   <section>
-    <div>
-      <ul class="posts-section">
-        Find {{catList.postlist.length}} post{{catList.postlist.length > 1 ? 's' : ' '}} in #{{catList.name}}!
-        <li class="posts" v-for="post in catList.postlist">
-          <router-link :to="{ name: 'Post', params: { slug: post.slug }}">{{ post.title }}</router-link>
-          <div v-if="post.excerpt" v-html="post.excerpt" class="post-excerpt"></div>
-          <div class="post-date">{{post.date | timeFormat}}</div>
-        </li>
-      </ul>
-    </div>
+    <div class="list-result">Find {{catList.postlist.length}} post{{catList.postlist.length > 1 ? 's' : ' '}} in {{catList.name}}!</div>
+    <post-list :postslist="catList.postlist"></post-list>
   </section>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import PostList from '@/components/PostList.vue'
 
 export default {
   name: 'PostsByCat',
   props: ['cat'],
+  components: {
+    'post-list': PostList
+  },
   computed: {
     ...mapGetters([ 'catList' ])
   },
@@ -41,6 +37,7 @@ export default {
           document.title = this.cat
         }
       )
+      window.scrollTo(0, 0)
     }
   }
 }

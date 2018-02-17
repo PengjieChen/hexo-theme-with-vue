@@ -1,6 +1,6 @@
 <template>
-<div>
-  <button @click="revertLang">{{ currentLang }}</button>
+<div class="cv-view">
+  <button @click="revertLang" class="button">{{ currentLang }}</button>
   <div class="cv-en" v-if="this.lang==='En'">
     <h1>陈鹏杰</h1>
     <p class="slogan">如果不试试，连失败都不是你的。</p>
@@ -9,16 +9,16 @@
     <p>Hexo 主题</p>
     <p>基于VUE框架，搭建Gitpage个人博客。</p>
     <h2>涉及的相关技术</h2>
-    <p class="skill-tag">
-      <span>JavaScript  </span>
-      <span>HTML  </span>
-      <span>CSS  </span>
-      <span>SCSS  </span>
-      <span>Vue  </span>
-      <span>vue-router  </span>
-      <span>Vuex  </span>
-      <span>Webpack  </span>
-    </p>
+    <table>
+      <percentage cid="Java-Script" length="80"></percentage>
+      <percentage cid="HTML" length="55"></percentage>
+      <percentage cid="CSS" length="45"></percentage>
+      <percentage cid="SCSS" length="35"></percentage>
+      <percentage cid="Vue" length="75"></percentage>
+      <percentage cid="vue-router" length="65"></percentage>
+      <percentage cid="Vuex" length="65"></percentage>
+      <percentage cid="Webpack" length="45"></percentage>
+    </table>
     <h2>教育背景</h2>
     <p>电子科技大学本科及研究生</p>
     <p>2013年光电信息学院毕业</p>
@@ -35,16 +35,16 @@
     <p>Hexo Theme</p>
     <p>Build personal blog on Gitpage with vue.</p>
     <h2>Professions</h2>
-    <p class="skill-tag">
-      <span>JavaScript  </span>
-      <span>HTML  </span>
-      <span>CSS  </span>
-      <span>SCSS  </span>
-      <span>Vue  </span>
-      <span>vue-router  </span>
-      <span>Vuex  </span>
-      <span>Webpack  </span>
-    </p>
+    <table>
+      <percentage cid="Java-Script" length="80"></percentage>
+      <percentage cid="HTML" length="55"></percentage>
+      <percentage cid="CSS" length="45"></percentage>
+      <percentage cid="SCSS" length="35"></percentage>
+      <percentage cid="Vue" length="75"></percentage>
+      <percentage cid="vue-router" length="65"></percentage>
+      <percentage cid="Vuex" length="65"></percentage>
+      <percentage cid="Webpack" length="45"></percentage>
+    </table>
     <h2>Education</h2>
     <p>Undergraduate and graduate student at UESTC(University of Electronic Science and Technology of China)</p>
     <p>Graduated on July 2013, school of optoelectronic imformation of UESTC</p>
@@ -57,8 +57,13 @@
 </template>
 
 <script>
+import Percentage from '@/components/Percentage.vue'
+
 export default {
   name: 'CV',
+  components: {
+    'percentage': Percentage
+  },
   data () {
     return {
       lang: 'En'
@@ -77,25 +82,23 @@ export default {
   },
   created () {
     document.title = '陈鹏杰的简历'
+    window.scrollTo(0, 0)
   }
 }
 </script>
 
 <style scoped>
-button {
-  border: 1px solid black;
-  outline: none;
-}
-button::-moz-focus-inner {
-  border: 0;
-  background-color: #D8D8D8;
-}
 h1 {
   margin-bottom: 0px;
 }
 span{
   padding: 0 10px;
   font-size:16px;
+}
+.cv-view {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 70px;
 }
 .slogan {
   /* transform: translate(20px); */
