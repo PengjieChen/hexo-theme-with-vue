@@ -22,11 +22,11 @@ html {
   }
   
   a {
-    color: $--primary-color;
+    color: $--post-primary-color;
     text-decoration: none;
     transition: all 200ms;
   
     &:hover {
-      color: mix($--white, $--primary-color, 20%);
+      color: mix($--white, $--post-primary-color, 20%);
     }
   }

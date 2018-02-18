@@ -1,13 +1,28 @@
 // Color
 $--white: #fff;
 $--black: #000;
-$--primary-color: #5c5c5c;
-$--post-divide-line-color: mix($--white, #5c5c5c, 50%);
 
-// Container
-$--container-width: 800px;
-$--small-screen-width: 768px;
+// post
+$--post-primary-color: #5c5c5c;
+$--post-color: #7F7F7F;
+// $--post-divide-line-color: mix($--white, #5c5c5c, 50%);
 
+$--app-background-color: #EEE;
+$--post-view-background-color: $--white;
+$--footer-background-color: #262A30;
+$--main-background-color: #D8D8D8;
+$--sub-main-color: #7F7F7F;
+$--hight-light-color: orange;
+$--border-shadow-color: #CCC;
+// layout
+$--main-contain-width: 95%;
+$--sidebar-width: 210px;
+$--main-left-margin: 5%;
+$--sidebar-post-gap-width: 10px;
+$--medium-screen-width: 769px;
+$--small-screen-width: 420px;
+$--percentage-length-normal: 300px;
+$--percentage-length-small: 100px;
 // Font
 $--basic-font-family: "Proxima Nova Rg", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 $--code-font-family: "Fira-Code", "Consolas", $--basic-font-family;

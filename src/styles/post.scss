@@ -19,8 +19,8 @@
 @mixin em {
   margin: 0 .1rem;
   padding: .1rem .3rem;
-  color: $--primary-color;
-  background-color: mix($--white, $--primary-color, 95%);
+  color: $--post-primary-color;
+  background-color: mix($--white, $--post-primary-color, 95%);
   font-family: $--code-font-family;
   border-radius: .1rem;
 }
@@ -81,7 +81,7 @@
   }
 
   blockquote {
-    border-left: .3rem solid $--primary-color;
+    border-left: .3rem solid $--post-primary-color;
     padding-left: .8rem;
     margin-left: 0;
     margin-right: 0;

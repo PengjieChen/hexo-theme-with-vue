@@ -40,11 +40,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-a {
-  text-decoration: none;
-  font-size: 1.3em;
-  color: black;
-  border: 1px solid white;
-}
+<style lang="scss" scoped>
+// a {
+//   text-decoration: none;
+//   font-size: 1.3em;
+//   color: black;
+//   border: 1px solid white;
+// }
 </style>

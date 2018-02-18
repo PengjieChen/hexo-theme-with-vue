@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="pom" :style="indent">
-      <span @click="toggleChildren" v-if="plusOrMinus">{{plusOrMinus}}</span>
+      <i class="more-or-less" @click="toggleChildren" v-if="plusOrMinus">{{plusOrMinus}}</i>
       <router-link :to="{ name: 'PostsByCat', params: { cat: name }}">{{name}}</router-link>
       </div>
     <cat-tree v-if="showChildren" v-for="sub in tree" :tree="sub.children" :name="sub.name" :depth="depth + 1" :key="sub._id">
@@ -32,8 +32,15 @@ export default {
 }
 </script>
 
-<style scoped>
-.pom :hover {
+<style lang="scss" scoped>
+@import '../styles/vars.scss';
+
+.pom:hover {
   cursor: pointer;
+  // color: $--sub-main-color;
+}
+.more-or-less:hover {
+  color: $--sub-main-color;
+  border-bottom: 2px solid $--sub-main-color;
 }
 </style>

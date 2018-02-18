@@ -34,6 +34,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" src="../styles/base.scss"></style>
-<style lang="scss" src="../styles/post.scss"></style>
+<style lang="scss" src="../styles/base.scss" scoped></style>
+<style lang="scss" src="../styles/post.scss" scoped></style>
 <style lang="scss" src="../styles/code.scss"></style>

@@ -71,11 +71,8 @@ export default {
 }
 </script>
 
-<style scoped>
-nav_info {
-  width: 200px;
-}
-
+<style lang="scss" scoped>
+@import '../styles/vars.scss';
 /* #nav_click {
   display: none;
   margin: auto 0px;
@@ -90,10 +87,10 @@ nav_info {
 
 #atuhor-info, #achievements, #tags, #timeline {
   margin-top: 20px;
-  border: 1px solid white;
-  background-color: #D8D8D8;
-  border-radius: 6px;
-  /* box-shadow:2px 2px 5px #444; */
+  border: 1px solid $--border-shadow-color;
+  background-color: $--main-background-color;
+  border-radius: 3px;
+  box-shadow: 0px -1px 4px 0px $--border-shadow-color;
 }
 
 h2 {

@@ -1,8 +1,10 @@
 <template>
-<footer>
-  <p>&copy; {{ time }} {{ siteCfg.author || siteCfg.title }}</p>
-  <p>powered by <router-link :to="{ path: '/' }">{{ siteCfg.title }}</router-link></p>
-</footer>
+  <footer>
+    <div class="footer-contain">
+      <p>&copy; {{ time }} {{ siteCfg.author || siteCfg.title }}</p>
+      <p>powered by <router-link :to="{ path: '/' }">{{ siteCfg.theme || siteCfg.author }}</router-link></p>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -20,15 +22,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '../styles/vars.scss';
+
 footer {
-  margin: 10px auto;
+  padding: 50px 40px;
   text-align: left;
   width: 100%;
-  background-color: #888;
-  font-size: 0.9em;
+  color: $--main-background-color;
+  background-color: $--footer-background-color;
+  font-size: 12px;
 }
-h1 {
-  margin: 0;
+a {
+  color: $--hight-light-color;
+}
+.footer-contain {
+  margin: auto 10px;
 }
 </style>

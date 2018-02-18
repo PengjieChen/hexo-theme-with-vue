@@ -25,9 +25,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+@import '../styles/vars.scss';
+
 .outer {
-  width: 300px;
+  width: $--percentage-length-normal;
   height: 10px;
   border: 1px solid black;
   border-radius: 10px;
@@ -35,7 +37,12 @@ export default {
 .inner {
   width: 0px;
   height: 10px;
-  background-color: #DBDBDB;
+  background-color: $--main-background-color;
   border-radius: 10px;
+}
+@media (max-width: $--medium-screen-width) {
+  .outer {
+    width: $--percentage-length-small;
+  }
 }
 </style>

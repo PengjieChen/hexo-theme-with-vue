@@ -18,13 +18,15 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+@import '../styles/vars.scss';
+
 #back {
   display: block;
   margin-top: 30px;
   font-size: 1.7em;
   text-align: center;
-  background-color: #DBDBDB;
+  background-color: $--main-background-color;
 }
 .fof-img {
   display: block;

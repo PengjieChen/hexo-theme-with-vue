@@ -1,0 +1,100 @@
+@import './vars.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  #app {
+    background-color: $--app-background-color;
+  }
+  #nav_info {
+    width: $--main-contain-width;
+  }
+  .main-contain {
+    float: left;
+    width: $--main-contain-width;
+    margin-bottom: 2%;
+  }
+  .post-view {
+    margin-top: 19px;
+    padding-bottom: 15px;
+    background-color: $--post-view-background-color;
+    border-radius: 3px;
+    border: 1px solid #DDD;
+    margin-left: $--sidebar-width + $--sidebar-post-gap-width;
+    box-shadow: 0px -1px 4px 0px $--border-shadow-color;
+  }
+  .side {
+    float: left;
+    margin-left: -$--main-contain-width;
+    margin-bottom: 2%;
+    width: $--sidebar-width;
+  }
+  .posts {
+    margin: 30px;
+    list-style-type: none;
+  }
+  .post-date {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $--post-color;
+    font-size: 0.9em;
+  }
+  .post-excerpt {
+    margin: 10px auto;
+  }
+  .list-result {
+    padding-top: 20px;
+    padding-left: 70px;
+    font-size: 1em;
+  }
+  .paginator {
+    margin: 10px auto 10px 20px;
+    display: inline-block;
+  }
+  .clear {
+    clear: both;
+  }
+  .button {
+    border: 1px solid black;
+    outline: none;
+  }
+  .button::-moz-focus-inner {
+    border: 0;
+    background-color: $--main-background-color;
+  }
+  .main-wrap {
+    margin-left: $--main-left-margin;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:visited, a:link, a:active {
+    color: $--black;
+  }
+  a:focus {
+    outline: none;
+  }
+  a:hover {
+    color: $--sub-main-color;
+    border-bottom: 2px solid $--sub-main-color;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+//   @media screen and (max-width: $--medium-screen-width) {
+  @media (max-width: $--medium-screen-width) {
+    .post-view, .side {
+      margin-left: 0;
+    }
+    .main-contain, .side {
+      float: none;
+    }
+    .side {
+      margin: 10px auto;
+      width: 100%;
+    }
+  }

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="year-line">
-      <span @click="toggleTimeline" v-if="plusOrMinus">{{plusOrMinus}} {{time.year}} ({{time.postlist.length}})</span>
+    <div>
+      <span class="year-line" @click="toggleTimeline" v-if="plusOrMinus">{{plusOrMinus}} {{time.year}} ({{time.postlist.length}})</span>
     </div>
     <div class="month-items" v-if="showTimeline" v-for="byMonth in time.postlist">
       <router-link :to="{ name: 'PostsByTL', params: { year: time.year, month: byMonth.month}}">
@@ -35,11 +35,15 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+@import '../styles/vars.scss';
+
 .month-items {
   transform: translate(30px)
 }
-.year-line :hover {
+.year-line:hover {
   cursor: pointer;
+  color: $--sub-main-color;
+  border-bottom: 2px solid $--sub-main-color;
 }
 </style>
