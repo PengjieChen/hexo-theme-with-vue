@@ -34,7 +34,7 @@
     <h2>Projects</h2>
     <p>Hexo Theme</p>
     <p>Build personal blog on Gitpage with vue.</p>
-    <h2>Professions</h2>
+    <h2>Skills</h2>
     <table>
       <percentage cid="Java-Script" length="80"></percentage>
       <percentage cid="HTML" length="55"></percentage>
