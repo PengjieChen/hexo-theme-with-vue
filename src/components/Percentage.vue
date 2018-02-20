@@ -17,25 +17,9 @@ export default {
   name: 'Percentage',
   props: ['cid', 'length'],
   mounted () {
-    console.log(window.innerWidth)
     let percentLength = document.getElementsByClassName(this.cid)[0]
     let outerLentgh = window.innerWidth >= 769 ? 300 : 100
     percentLength.style.width = (this.length / 100 * outerLentgh) + 'px'
-    // document.getElementsByClassName(this.percent)[0].style.width = '20px'
-    // window.onresize = function percentageResize () {
-    //   // let bigFlag = (window.innerWidth >= 768) ? 1 : 0
-    //   if (window.innerWidth > 768) {
-    //     percentLength.style.width = (that / 100 * 300) + 'px'
-    //     // bigFlag = 0
-    //     console.log(`big`)
-    //     console.log(that.length)
-    //   } else if (window.innerWidth < 768) {
-    //     percentLength.style.width = (that / 100 * 100) + 'px'
-    //     // bigFlag = 1
-    //     console.log(`small`)
-    //     console.log(that.length)
-    //   }
-    // }
   }
 }
 </script>

@@ -66,23 +66,73 @@ export default {
   },
   data () {
     return {
-      lang: 'En'
+      lang: 'En',
+      windowSize: 'big'
     }
   },
   computed: {
     currentLang: function () {
       return this.lang
+    },
+    currentWindow: function () {
+      return this.windowSize
     }
   },
   methods: {
     revertLang: function () {
       this.lang = (this.lang === 'En') ? 'Ch' : 'En'
       document.title = (this.lang === 'En') ? '陈鹏杰的简历' : "PengjieChen's CV"
+    },
+    revertStyle: function () {
+      this.windowSize = (this.windowSize === 'big') ? 'small' : 'big'
+    },
+    styleInit: function () {
+      this.windowSize = window.windowSize > 768 ? 'big' : 'small'
     }
   },
   created () {
     document.title = '陈鹏杰的简历'
     window.scrollTo(0, 0)
+  },
+  mounted () {
+    this.styleInit()
+    // console.log(`this${this.currentWindow}`)
+    var that = this
+    // that.currentWindow  = this.currentWindow
+    // console.log(`that${that.currentWindow}`)
+    window.onresize = function percentageResize () {
+      if (window.innerWidth >= 768 && that.currentWindow === 'small') {
+        // percentLength.style.width = (that / 100 * 300) + 'px'
+        // bigFlag = 0
+        let el = document.getElementsByClassName('inner')
+        let length = el.length
+        for (let idx = 0; idx < length; idx++) {
+          let tempLength = el[idx].style.width.replace(/px$/, '')
+          // console.log(`1 ${tempLength}`)
+          el[idx].style.width = tempLength * 3 + 'px'
+          // console.log(`2 ${el[idx].style.width}`)
+        }
+        // console.log(that.currentWindow)
+        that.revertStyle()
+        // console.log(`after revert:`)
+        // console.log(that.currentWindow)
+      } else if (window.innerWidth < 768 && that.currentWindow === 'big') {
+        // percentLength.style.width = (that / 100 * 100) + 'px'
+        // bigFlag = 1
+        let el = document.getElementsByClassName('inner')
+        let length = el.length
+        for (let idx = 0; idx < length; idx++) {
+          let tempLength = el[idx].style.width.replace(/px$/, '')
+          // console.log(`1 ${tempLength}`)
+          el[idx].style.width = tempLength / 3 + 'px'
+          // console.log(`2 ${el[idx].style.width}`)
+        }
+        // console.log(that.currentWindow)
+        that.revertStyle()
+        // console.log(`after revert:`)
+        // console.log(that.currentWindow)
+      }
+    }
   }
 }
 </script>
