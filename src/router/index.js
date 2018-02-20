@@ -1,56 +1,48 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-if (!window.root || window.root === '') {
-  window.root = '/'
-} else if (!window.root.endsWith('/')) {
-  window.root += '/'
-}
-
-const root = window.root
-
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
     {
-      path: root,
+      path: '/',
       name: 'Posts',
       component: () => import('@/views/Posts')
     },
     {
-      path: root + 'Post/:slug',
+      path: '/Post/:slug',
       props: true,
       name: 'Post',
       component: () => import('@/views/Post')
     },
     {
-      path: root + 'Posts/:id',
+      path: '/Posts/:id',
       props: true,
       name: 'PostsById',
       component: () => import('@/views/PostsById')
     },
     {
-      path: root + 'Tags/:tag',
+      path: '/Tags/:tag',
       props: true,
       name: 'PostsByTag',
       component: () => import('@/views/PostsByTag')
     },
     {
-      path: root + 'Cats/:cat',
+      path: '/Cats/:cat',
       props: true,
       name: 'PostsByCat',
       component: () => import('@/views/PostsByCat')
     },
     {
-      path: root + 'Timeline/:year/:month',
+      path: '/Timeline/:year/:month',
       props: true,
       name: 'PostsByTL',
       component: () => import('@/views/PostsByTL')
     },
     {
-      path: root + 'CV',
+      path: '/CV',
       name: 'CV',
       component: () => import('@/views/CV')
     },

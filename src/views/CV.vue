@@ -87,7 +87,7 @@ export default {
       this.windowSize = (this.windowSize === 'big') ? 'small' : 'big'
     },
     styleInit: function () {
-      this.windowSize = window.windowSize > 768 ? 'big' : 'small'
+      this.windowSize = window.innerWidth > 769 ? 'big' : 'small'
     }
   },
   created () {
@@ -98,7 +98,7 @@ export default {
     this.styleInit()
     var that = this
     window.onresize = function percentageResize () {
-      if (window.innerWidth >= 768 && that.currentWindow === 'small') {
+      if (window.innerWidth > 769 && that.currentWindow === 'small') {
         let el = document.getElementsByClassName('inner')
         let length = el.length
         for (let idx = 0; idx < length; idx++) {
@@ -106,7 +106,7 @@ export default {
           el[idx].style.width = tempLength * 3 + 'px'
         }
         that.revertStyle()
-      } else if (window.innerWidth < 768 && that.currentWindow === 'big') {
+      } else if (window.innerWidth <= 769 && that.currentWindow === 'big') {
         let el = document.getElementsByClassName('inner')
         let length = el.length
         for (let idx = 0; idx < length; idx++) {

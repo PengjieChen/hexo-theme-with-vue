@@ -18,7 +18,7 @@ export default {
   props: ['cid', 'length'],
   mounted () {
     let percentLength = document.getElementsByClassName(this.cid)[0]
-    let outerLentgh = window.innerWidth >= 769 ? 300 : 100
+    let outerLentgh = window.innerWidth > 769 ? 300 : 100
     percentLength.style.width = (this.length / 100 * outerLentgh) + 'px'
   }
 }
