@@ -2,7 +2,7 @@
   <section>
     <post-list :postslist="posts"></post-list>
     <div>
-      <ul>
+      <ul class="paginator-list">
         <li class="paginator" v-for="n in pageCount">
           <router-link :to="{ name: 'PostsById', params: { id: n }}">{{ n }}</router-link>
         </li>

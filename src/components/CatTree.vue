@@ -35,9 +35,8 @@ export default {
 <style lang="scss" scoped>
 @import '../styles/vars.scss';
 
-.pom:hover {
+.more-or-less:hover {
   cursor: pointer;
-  // color: $--sub-main-color;
 }
 .more-or-less:hover {
   color: $--sub-main-color;

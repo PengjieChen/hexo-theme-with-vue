@@ -6,7 +6,9 @@
       <section class="main-contain">
         <div class="post-view">
           <div class="post-wrap">
+            <transition name="fade" mode="out-in">
             <router-view></router-view>
+            </transition>
           </div>
         </div>
       </section>
@@ -34,4 +36,14 @@ export default {
 
 <style lang="scss">
 @import './styles/main.scss';
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-leave-active,
+.fade-enter {
+  opacity: 0;
+}
 </style>

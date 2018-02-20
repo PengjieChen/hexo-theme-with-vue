@@ -37,6 +37,6 @@ export default {
 .fof {
   padding-top: 20px;
   padding-right: 20px;
-  padding-left: 70px;
+  padding-left: 20px;
 }
 </style>

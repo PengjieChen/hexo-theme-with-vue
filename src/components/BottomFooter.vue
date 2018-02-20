@@ -32,6 +32,7 @@ footer {
   color: $--main-background-color;
   background-color: $--footer-background-color;
   font-size: 12px;
+  box-shadow: 0px -1px 1px 2px $--border-shadow-color;
 }
 a {
   color: $--hight-light-color;

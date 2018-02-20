@@ -15,9 +15,9 @@
       <percentage cid="CSS" length="45"></percentage>
       <percentage cid="SCSS" length="35"></percentage>
       <percentage cid="Vue" length="75"></percentage>
-      <percentage cid="vue-router" length="65"></percentage>
-      <percentage cid="Vuex" length="65"></percentage>
-      <percentage cid="Webpack" length="45"></percentage>
+      <percentage cid="vue-router" length="55"></percentage>
+      <percentage cid="Vuex" length="45"></percentage>
+      <percentage cid="Webpack" length="35"></percentage>
     </table>
     <h2>教育背景</h2>
     <p>电子科技大学本科及研究生</p>
@@ -41,9 +41,9 @@
       <percentage cid="CSS" length="45"></percentage>
       <percentage cid="SCSS" length="35"></percentage>
       <percentage cid="Vue" length="75"></percentage>
-      <percentage cid="vue-router" length="65"></percentage>
-      <percentage cid="Vuex" length="65"></percentage>
-      <percentage cid="Webpack" length="45"></percentage>
+      <percentage cid="vue-router" length="55"></percentage>
+      <percentage cid="Vuex" length="45"></percentage>
+      <percentage cid="Webpack" length="35"></percentage>
     </table>
     <h2>Education</h2>
     <p>Undergraduate and graduate student at UESTC(University of Electronic Science and Technology of China)</p>
@@ -96,41 +96,24 @@ export default {
   },
   mounted () {
     this.styleInit()
-    // console.log(`this${this.currentWindow}`)
     var that = this
-    // that.currentWindow  = this.currentWindow
-    // console.log(`that${that.currentWindow}`)
     window.onresize = function percentageResize () {
       if (window.innerWidth >= 768 && that.currentWindow === 'small') {
-        // percentLength.style.width = (that / 100 * 300) + 'px'
-        // bigFlag = 0
         let el = document.getElementsByClassName('inner')
         let length = el.length
         for (let idx = 0; idx < length; idx++) {
           let tempLength = el[idx].style.width.replace(/px$/, '')
-          // console.log(`1 ${tempLength}`)
           el[idx].style.width = tempLength * 3 + 'px'
-          // console.log(`2 ${el[idx].style.width}`)
         }
-        // console.log(that.currentWindow)
         that.revertStyle()
-        // console.log(`after revert:`)
-        // console.log(that.currentWindow)
       } else if (window.innerWidth < 768 && that.currentWindow === 'big') {
-        // percentLength.style.width = (that / 100 * 100) + 'px'
-        // bigFlag = 1
         let el = document.getElementsByClassName('inner')
         let length = el.length
         for (let idx = 0; idx < length; idx++) {
           let tempLength = el[idx].style.width.replace(/px$/, '')
-          // console.log(`1 ${tempLength}`)
           el[idx].style.width = tempLength / 3 + 'px'
-          // console.log(`2 ${el[idx].style.width}`)
         }
-        // console.log(that.currentWindow)
         that.revertStyle()
-        // console.log(`after revert:`)
-        // console.log(that.currentWindow)
       }
     }
   }
@@ -138,6 +121,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/vars.scss';
+
 h1 {
   margin-bottom: 0px;
 }
@@ -148,10 +133,9 @@ span{
 .cv-view {
   padding-top: 20px;
   padding-right: 20px;
-  padding-left: 70px;
+  padding-left: 20px;
 }
 .slogan {
-  /* transform: translate(20px); */
   font-size: 0.8em;
 }
 .skill-tag {
