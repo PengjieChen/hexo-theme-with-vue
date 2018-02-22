@@ -24,7 +24,7 @@ export default new Router({
       component: () => import('@/views/PostsById')
     },
     {
-      path: '/Tags/:tag',
+      path: '/tags/:tag',
       props: true,
       name: 'PostsByTag',
       component: () => import('@/views/PostsByTag')
