@@ -1,6 +1,6 @@
 # meow
 
-> A Vue.js project
+> A Vue.js project for hexo theme named meow
 
 ## Build Setup
 
@@ -9,22 +9,13 @@
 npm install
 
 # serve with hot reload at localhost:8080
+# work with hexo-json-server
 npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Todos:
+1. webpack configuration for building the whole project release
+2. test the project for Hexo publishing
