@@ -44,10 +44,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// a {
-//   text-decoration: none;
-//   font-size: 1.3em;
-//   color: black;
-//   border: 1px solid white;
-// }
 </style>

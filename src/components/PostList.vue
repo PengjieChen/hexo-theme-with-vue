@@ -17,14 +17,11 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 a {
   text-decoration: none;
   font-size: 1.3em;
-  // color: black;
 }
-
 a:active {
   border-bottom: 1px solid black;
 }

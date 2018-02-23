@@ -43,7 +43,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 a {
   text-decoration: none;
@@ -51,8 +50,4 @@ a {
   color: black;
   border: 1px solid white;
 }
-
-/* a:hover {
-  border: 1px solid black;
-} */
 </style>

@@ -66,9 +66,6 @@ header {
   width: 100%;
   height: 250px;
   box-shadow: 0px 1px 1px 2px $--border-shadow-color;
-  // background-size:cover;
-  // background-position: 50% 50%;
-  // background-image: url(../assets/cat.jpeg);
 }
 .header-img {
   position: absolute;
