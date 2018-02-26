@@ -26,6 +26,8 @@
 }
 
 #post-contain {
+  font-family: $--basic-font-family !important;
+  
   text-align: left;
   word-break: normal;
   word-wrap: break-word;
@@ -106,7 +108,7 @@
   }
 
   img {
-    display: block;
+    display: inline;
     max-width: 100%;
     margin: .5em auto;
   }

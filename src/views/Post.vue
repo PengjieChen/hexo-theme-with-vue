@@ -33,6 +33,5 @@ export default {
 }
 </script>
 
-<style lang="scss" src="../styles/base.scss" scoped></style>
-<style lang="scss" src="../styles/post.scss" scoped></style>
+<style lang="scss" src="../styles/post.scss"></style>
 <style lang="scss" src="../styles/code.scss"></style>
