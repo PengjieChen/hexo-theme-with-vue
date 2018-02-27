@@ -25,7 +25,7 @@
     <h2>工作经历</h2>
     <p>现从事嵌入式开发，负责公司SSD controlor固件前端开发，主要包括基于SATA协议与主机的通信部分。希望未来从事Web前端开发的相关工作。</p>
     <p>工作地点：杭州</p>
-    <p><a href="https://pengjiechen.github.io/" target="_blank">了解更多</a> || <a href="https://pengjiechen.github.io/CV.pdf" target="_blank">下载简历</a></p>
+    <p><a href="https://pengjiechen.github.io/" target="_blank">了解更多</a> || <a href="https://pengjiechen.github.io/陈鹏杰_前端开发_杭州.pdf" target="_blank">下载简历</a></p>
   </div>
   <div class="cv-ch" v-else>
     <h1>PengjieChen</h1>
@@ -51,7 +51,7 @@
     <h2>Current Position</h2>
     <p>Embedded software developer，in charged of SSD controler firmware front-end develop，including communication with host under SATA protocol. Hope to be engaged in Web front-end development in the future.</p>
     <p>Location：HangZhou</p>
-    <p><a href="https://pengjiechen.github.io/" target="_blank">More Information</a> || <a href="https://pengjiechen.github.io/CV.pdf" target="_blank">Download CV</a></p>
+    <p><a href="https://pengjiechen.github.io/" target="_blank">More Information</a> || <a href="https://pengjiechen.github.io/陈鹏杰_前端开发_杭州.pdf" target="_blank">Download CV</a></p>
   </div>
 </div>
 </template>
